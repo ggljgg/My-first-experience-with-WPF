@@ -1,0 +1,728 @@
+﻿<Window x:Class="ParameterReferenceBook.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="" Height="450" Width="525" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"  AllowsTransparency="True" Topmost="True" Icon="Icon.ico">
+    <Window.Resources>
+        <Storyboard x:Key="LettersAnimation" Completed="Storyboard_Completed">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-289"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.921" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-289"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.058" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-115"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.085" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.963" Value="-720">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-289"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.929" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-289"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-191"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.057" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path6">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-289"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path7">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-289"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.356" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path8">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-159"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.872" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path9">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-289"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.7" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="66"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.921" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="66"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.058" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="160"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.085" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.963" Value="-720">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="66"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.929" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="66"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-230"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.057" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path6">
+                <EasingDoubleKeyFrame KeyTime="0" Value="66"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path7">
+                <EasingDoubleKeyFrame KeyTime="0" Value="66"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.356" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path8">
+                <EasingDoubleKeyFrame KeyTime="0" Value="208"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.872" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path9">
+                <EasingDoubleKeyFrame KeyTime="0" Value="66"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.7" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="360"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.921" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.3" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path1">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.058" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.8" Value="720"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.085" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.963" Value="-720">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.7" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.929" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="-360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path4">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.9" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path5">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.057" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.8" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path6">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.473" Value="360"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path7">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.356" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.9" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path8">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.872" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.618" Value="360"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.8" Value="-360"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path9">
+                <EasingDoubleKeyFrame KeyTime="0:0:4.7" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path10">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-328"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.279" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path10">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-144"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.279" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path11">
+                <EasingDoubleKeyFrame KeyTime="0" Value="246"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.857" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path11">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-248"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.857" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path12">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-146"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.321" Value="-172.544"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.607" Value="-224.099"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.407" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path12">
+                <EasingDoubleKeyFrame KeyTime="0" Value="220"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.321" Value="219.922"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.607" Value="143.128"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.407" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path13">
+                <EasingDoubleKeyFrame KeyTime="0" Value="216"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.957" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path13">
+                <EasingDoubleKeyFrame KeyTime="0" Value="210"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.957" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path14">
+                <EasingDoubleKeyFrame KeyTime="0" Value="214"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.286" Value="-29.261"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.571" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path14">
+                <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.286" Value="12.742"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.571" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path14">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.286" Value="2.453"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.571" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path14">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.286" Value="2.318"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.571" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path14">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.286" Value="-17.012"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.571" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path12">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.321" Value="1.745"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.607" Value="2.924"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.407" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path12">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.321" Value="1.723"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.607" Value="3.632"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.407" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path15">
+                <EasingDoubleKeyFrame KeyTime="0" Value="304"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.456" Value="95.542857142857144"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path15">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.456" Value="-1.8857142857142861"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path16">
+                <EasingDoubleKeyFrame KeyTime="0" Value="304"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="95.542857142857144"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path16">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-1.8857142857142861"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path17">
+                <EasingDoubleKeyFrame KeyTime="0" Value="304"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="95.542857142857144"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.9" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path17">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="-1.8857142857142861"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.9" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path18">
+                <EasingDoubleKeyFrame KeyTime="0" Value="304"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="95.542857142857144"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path18">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-1.8857142857142861"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path19">
+                <EasingDoubleKeyFrame KeyTime="0" Value="304"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="95.542857142857144"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path19">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-1.8857142857142861"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path15">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.456" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path16">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path17">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.9" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path18">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path19">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path10">
+                <EasingDoubleKeyFrame KeyTime="0:0:3.279" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path11">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.857" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path12">
+                <EasingDoubleKeyFrame KeyTime="0:0:3.407" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path13">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.957" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.7" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="path14">
+                <EasingDoubleKeyFrame KeyTime="0:0:2.571" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path15">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-720"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.456" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path17">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-720"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path16">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-38.375"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-720"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="path18">
+                <EasingDoubleKeyFrame KeyTime="0" Value="41.644"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-720"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource LettersAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Window.Style>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border x:Name="Border" BorderThickness="1" CornerRadius="110" BorderBrush="DarkBlue">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                                    <GradientStop Color="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}" Offset="0.0"/>
+                                    <GradientStop Color="BlueViolet" Offset="0.9"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0" Color="Orange" Opacity="15"
+                                                  BlurRadius="2" Direction="45"  RenderingBias="Quality"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Style>
+    <StackPanel Orientation="Vertical" Width="416">
+        <Image Height="180" Source="Logo.png" Stretch="Fill" Margin="117.007,0,117.006,0" HorizontalAlignment="Center"/>
+        <Grid Height="36.984" Margin="3.993,0,-2.015,0">
+            <Path x:Name="path" Data="M24.559007,5.3290705E-15 C25.371498,1.9999797E-06 25.701665,0.53319959 25.549509,1.5995928 25.413723,2.5488022 25.109775,3.7148063 24.637663,5.0976043 24.473543,5.5780684 24.199952,5.9999392 23.816891,6.3632165 23.342935,6.8202428 22.811577,7.0487565 22.222817,7.0487565 21.469199,7.0487565 21.054029,6.609308 20.977308,5.7304109 20.90371,4.9804185 20.753576,4.5233911 20.526904,4.3593308 20.32378,4.2304261 19.733545,4.1659728 18.756201,4.1659728 17.04879,4.1659728 14.708735,5.4667416&#xD;&#xA;11.736036,8.0682772 7.7175485,11.56043 5.1740024,14.870943 4.1053984,17.999817 3.5893108,19.511521 3.6338359,20.812289 4.2389739,21.902122 4.8557026,23.027111 5.870582,23.589605 7.2836124,23.589605 8.4964619,23.589605 9.8212696,23.279061 11.258034,22.657973 12.060959,22.306414 13.345014,21.615015 15.110198,20.583775 15.949552,20.091593 16.53997,19.845502 16.881453,19.845502 17.387788,19.845502 17.746657,20.03593 17.958061,20.416785 18.169463,20.79764&#xD;&#xA;18.195129,21.222441 18.035059,21.691186 17.854935,22.218525 17.473159,22.68141 16.889733,23.079844 12.844566,25.822003 9.2323227,27.193083 6.0530067,27.193083 3.6155291,27.193083 1.8729761,26.261453 0.82534732,24.39819 -0.18327667,22.593521 -0.26745136,20.46073 0.57282336,17.999817 1.9295525,14.027202 4.9923139,9.9549771 9.7611059,5.7831444 13.740221,2.3027127 17.148696,0.5624963 19.986531,0.5624943 20.563516,0.5624963 21.072658,0.58886303 21.513956,0.64159449&#xD;&#xA;21.95525,0.69433096 22.332472,0.7792911 22.645621,0.89647491 23.261796,0.29882697 23.899592,1.9999797E-06 24.559007,5.3290705E-15 z" Fill="White" RenderTransformOrigin="8.09094729800631,0.680025875630893" Stretch="Fill" Margin="0,0,388.436,9.791">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path1" Data="M11.979781,3.4970273E-07 C12.992453,3.4970273E-07 14.512333,0.014649201 16.539425,0.043945904 18.566515,0.073242607 20.086397,0.087890459 21.099068,0.087890459 21.570075,0.087890459 21.92025,0.26074071 22.149595,0.6064402 22.378933,0.9521397 22.413569,1.3593616 22.253503,1.8281068 21.99334,2.5898181 21.573708,3.7323845 20.994609,5.2558071 20.415502,6.7792286 19.99587,7.921795 19.735715,8.6835063 19.407664,9.6444346 18.99898,11.074107 18.509663,12.972526 18.020346,14.870944 17.609546,16.306476&#xD;&#xA;17.277264,17.279122 17.105235,17.783024 16.798342,18.199035 16.356586,18.527156 15.914831,18.855278 15.434897,19.01934 14.916786,19.01934 14.41045,19.01934 14.048454,18.855278 13.830795,18.527156 13.613137,18.199035 13.590322,17.783024 13.762352,17.279122 14.086539,16.329914 14.492233,14.917818 14.979434,13.042837 15.466635,11.167856 15.872329,9.7557614 16.196516,8.8065521 16.284462,8.5487427 16.927778,6.8026664 18.126462,3.5683242 17.667227,3.5683242&#xD;&#xA;16.446649,3.5566053 14.464727,3.5331685 12.965406,3.5097308 11.738845,3.4980119 10.785053,3.4980119 10.372916,3.4980119 9.5089069,3.580043 8.193026,3.7441034 7.9404099,4.5526892 7.5326001,5.9882216 6.9695957,8.0507007 6.4711722,9.8553694 6.0418331,11.285043 5.6815846,12.339719 5.4894999,12.902214 5.1483862,13.745955 4.6582414,14.870944 4.1680965,15.995932 3.8249581,16.845534 3.628827,17.419746 3.4567976,17.923648 3.1499051,18.339658 2.7081494,18.66778&#xD;&#xA;2.2663938,18.995902 1.78646,19.159963 1.268349,19.159963 0.76201346,19.159963 0.40001653,18.995902 0.18235816,18.66778 -0.035300213,18.339658 -0.058114681,17.923648 0.11391475,17.419746 0.31004583,16.845534 0.6561284,15.995932 1.1521605,14.870944 1.6481925,13.745955 1.9922514,12.902214 2.1843351,12.339719 2.556543,11.249886 3.0382242,9.6239268 3.6293787,7.4618397 4.2205332,5.2997516 4.7021229,3.6737921 5.074147,2.5839591 5.2943807,1.9394347 5.6786404,1.4091661&#xD;&#xA;6.2269252,0.99315528 6.775212,0.5771435 7.3731742,0.36913761 8.0208127,0.36913761 8.4447187,0.36913761 9.1016025,0.30761523 9.9914653,0.18456948 10.881321,0.061523726 11.544093,3.4970273E-07 11.979781,3.4970273E-07 z" Fill="White" RenderTransformOrigin="8.2838317752352,0.527522933372383" Stretch="Fill" Margin="21.849,8.385,369.821,9.439">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path2" Data="M16.603554,4.693 C15.520271,4.693 14.460905,4.9332344 13.425457,5.4137011 12.685483,5.7535442 11.684532,6.3746366 10.422603,7.2769782 9.667359,9.9371272 8.7894909,12.732042 7.789,15.661721 8.9044795,16.153908 10.103947,16.4 11.387402,16.4 12.859254,16.4 14.169754,15.855081 15.318903,14.76524 16.314243,13.816023 17.070038,12.585557 17.586291,11.073843 18.31449,8.9410358 18.597683,7.34436 18.435872,6.2838168 18.274059,5.2232726 17.663287,4.693&#xD;&#xA;16.603554,4.693 z M11.123142,-2.6645349E-15 C11.582381,-2.6645349E-15 11.91301,0.16113164 12.115031,0.48339391 12.317052,0.80565718 12.338027,1.2011618 12.177955,1.6699079 12.141894,1.775375 12.058179,1.9687333 11.926809,2.249981 11.743923,2.6132589 11.588728,2.9472401 11.461223,3.2519255 12.709963,2.5605253 13.86436,2.0419747 14.924418,1.6962746 15.984475,1.3505746 16.944305,1.177724 17.803905,1.177724 20.217848,1.177724 21.620034,2.244121 22.010461,4.3769159 22.317356,6.0644017 21.99657,8.2968048&#xD;&#xA;21.048102,11.074125 20.183718,13.605354 18.788435,15.691273 16.862245,17.331884 14.821613,19.066245 12.594325,19.933425 10.180378,19.933425 9.0028427,19.933425 7.7715825,19.745927 6.486598,19.37093 L3.5818579,27.773202 C3.4057796,28.288823 3.0998049,28.710694 2.6639328,29.038816 2.2280607,29.366938 1.7569553,29.531 1.2506144,29.531 0.74427465,29.531 0.38521879,29.366938 0.17344588,29.038816 -0.038326038,28.710694 -0.056172821,28.288823 0.11990553,27.773202 L2.5739613,20.742011 4.9692336,13.728399 C5.810251,11.162015 6.5202678,8.8241443 7.099284,6.7147872 L8.0528112,3.1464574 C8.3368917,2.3144334 8.7300776,1.6113144 9.23237,1.0371002 9.8216896,0.34570007 10.451947,-2.6645349E-15 11.123142,-2.6645349E-15 z" Fill="White" RenderTransformOrigin="7.51477926111591,0.373799955015181" Stretch="Fill" Margin="40.756,7.453,351.143,0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path3" Data="M13.562653,3.1110001 C11.737519,3.1110001 9.9095347,3.8521952 8.0786977,5.3345855 6.2478618,6.8169757 5.0022822,8.5249462 4.3419589,10.458499 3.685684,12.380333 3.5349543,13.821708 3.8897698,14.782625 4.2445853,15.743542 5.104946,16.224 6.470852,16.224 7.6012569,16.224 8.6309292,16.018927 9.5598708,15.60878 10.059759,15.386127 10.806462,14.940825 11.799983,14.27287 12.483672,11.167468 13.089626,8.8413464 13.617848,7.2945045 13.789874,6.7906083 14.009322,6.242769&#xD;&#xA;14.276192,5.6509847 14.543063,5.0592004 14.855333,4.4293308 15.213,3.7613761 14.853308,3.5387249 14.535428,3.3746664 14.259358,3.2691997 13.983288,3.1637329 13.751054,3.1110001 13.562653,3.1110001 z M14.395626,6.1035156E-08 C15.420058,6.1035156E-08 16.478068,0.26367587 17.569655,0.79102648 18.946973,1.447286 19.477587,2.2383134 19.1615,3.1641078 19.0535,3.4805183 18.839708,3.7617724 18.520125,4.0078699 18.250402,4.4531894 17.909063,5.1856219 17.496107,6.2051677 17.083151,7.2247134 16.598671,8.5313733 16.042666,10.125146 15.534681,11.578292 15.242604,12.726746 15.166434,13.570508 15.10811,14.08614 15.126877,15.117405 15.222734,16.664303 15.233221,16.875244 15.262566,17.185795&#xD;&#xA;15.310771,17.595957 L15.31491,17.894789 C15.154659,18.363546 14.85766,18.750271 14.423913,19.054962 13.990167,19.359655 13.555455,19.512 13.119777,19.512 12.89605,19.512 12.577847,19.254184 12.165167,18.738552 11.799404,18.258076 11.551022,17.830336 11.420025,17.45533 10.081529,18.064714 8.9294562,18.524682 7.9638073,18.835233 6.9981584,19.145785 6.2268443,19.30106 5.6498659,19.30106 2.8944955,19.30106 1.1510474,18.527611 0.41951955,16.980713 -0.27355429,15.527567 -0.10787564,13.300973&#xD;&#xA;0.91655751,10.30093 1.8848742,7.4649509 3.6934539,5.0391348 6.3422956,3.0234807 8.9911373,1.0078266 11.675581,6.1035156E-08 14.395626,6.1035156E-08 z" Fill="White" RenderTransformOrigin="7.46757044528159,0.516184319168104" Stretch="Fill" Margin="63.258,8.42,331.514,9.052">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path4" Data="M5.7496191,10.74 C5.4303965,11.536843 5.1767662,12.210644 4.9887282,12.761403 L3.8180001,16.189 C9.0988803,15.966353 11.987432,15.128495 12.483652,13.675428 12.699657,13.042642 12.438575,12.44501 11.700407,11.882532 11.13427,11.437237 10.484693,11.132562 9.7516776,10.968506 9.3244528,10.87476 8.6654004,10.822028 7.7745206,10.810309 6.6637738,10.786873 5.988806,10.763436 5.7496191,10.74 z M10.328229,3.023 C9.4332447,3.023 8.8207958,3.0405777 8.4908811,3.075733 8.3429435,3.4741632 8.1168976,4.1186816 7.8127423,5.0092891 7.7367502,5.2319408 7.6161368,5.6713852 7.450904,6.3276223 7.3099586,6.8783926 7.1696573,7.3236968 7.0300001,7.6635342 7.6773177,7.7338448 8.2718272,7.7690001 8.8135274,7.7690001 10.132451,7.7690001 11.120172,7.6869707 11.77669,7.5229119 13.015204,7.2065111 13.796567,6.5737115 14.120779,5.6245111 14.364949,4.9096811 14.084438,4.2827403&#xD;&#xA;13.279247,3.7436889 12.571944,3.2632293 11.829682,3.023 11.052459,3.023 z M11.484571,-5.3290707E-15 C13.380401,-5.3290707E-15 14.943578,0.45701985 16.174102,1.3710605 17.611429,2.4374405 18.027981,3.8553749 17.423757,5.6248628 16.863515,7.2654477 15.570159,8.4665904 13.543692,9.2282908 14.306698,9.6150004 14.946341,10.241938 15.462612,11.109104 16.056718,12.093455 16.211722,13.001636 15.927647,13.833647 15.195368,15.978126 13.005062,17.495667 9.3567307,18.38627 7.0684503,18.948757 4.4229541,19.23 1.4202422,19.23 0.96100411,19.23 0.58442227,19.048363&#xD;&#xA;0.29049868,18.685091 -0.0034249031,18.321819 -0.074306558,17.917532 0.077852714,17.47223 L1.2182213,14.132468 C1.2301808,14.097312 2.361533,10.956764 4.61228,4.7108231 4.8124601,4.1248994 5.0125497,3.5389767 5.2125459,2.9530529 5.4684758,2.2382264 5.7411483,1.6640224 6.0305642,1.230439 6.2368165,0.90232198 6.4914583,0.67381156 6.7944896,0.54490871 6.9361615,0.47459842 7.2919976,0.38085071 7.861998,0.26366557 8.6284988,0.087888856 9.8360231,-5.3290707E-15 11.484571,-5.3290707E-15 z" Fill="White" RenderTransformOrigin="7.08877570287626,0.527424161255461" Stretch="Fill" Margin="81.597,8.35,314.733,9.404">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path5" Data="M13.598818,3.533 C11.785373,3.533 9.9091056,4.4411835 7.9699945,6.2575505 6.145145,7.9801695 4.8766011,9.8844257 4.1643628,11.970319 3.6841345,13.376539 3.8297675,14.519092 4.6012519,15.397979 5.3414552,16.229992 6.4828654,16.646 8.0254623,16.646 9.815353,16.646 11.626959,15.737816 13.460269,13.921448 15.151172,12.245703 16.360751,10.341447 17.088997,8.2086806 17.697283,6.4274689 17.735739,5.2028852 17.204364,4.5349315 16.672988,3.8669768 15.471136,3.533&#xD;&#xA;13.598818,3.533 z M14.805015,-4.9630837E-24 C20.645554,-4.9630837E-24 22.631337,2.7362357 20.762385,8.2087051 19.774,11.103137 18.065106,13.728048 15.635723,16.083437 12.807446,18.813813 9.8684066,20.179 6.8186156,20.179 4.3222515,20.179 2.4528371,19.446603 1.2103625,17.981809 -0.11012673,16.434987 -0.35013894,14.431149 0.49032583,11.970296 1.4787107,9.0758625 3.2701106,6.4333746 5.8645354,4.0428312 8.7750578,1.3476111 11.755214,-4.9630837E-24 14.805015,-4.9630837E-24 z" Fill="White" RenderTransformOrigin="4.97111969667036,0.53571471659583" Stretch="Fill" Margin="100.423,7.682,292.157,9.123">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path6" Data="M16.541928,1.0883414E-07 C17.790097,1.0883414E-07 18.047965,1.0722552 17.3155,3.2167645 17.207502,3.5331673 17.04878,3.955038 16.839315,4.4823767 16.62984,5.0097153 16.497033,5.3554148 16.440914,5.5194751 15.980756,6.8671175 15.269151,9.0028388 14.30607,11.926637 13.342979,14.850436 12.631254,16.986156 12.170915,18.333798 11.994841,18.849418 11.686933,19.26836 11.247203,19.590621 10.807473,19.912884 10.334434,20.074016 9.8281041,20.074016 9.3099881,20.074016 8.941088,19.912884&#xD;&#xA;8.721414,19.590621 8.5017299,19.26836 8.4799253,18.849418 8.6560001,18.333798 8.9801856,17.38459 9.6292098,15.380703 10.603063,12.322141 8.8183692,13.341662 6.8721408,13.851422 4.7643773,13.851422 2.2680193,13.851422 0.75559234,12.995962 0.22709651,11.285042 -0.30140937,9.574122 0.092550932,6.7909473 1.4089774,2.9355173 2.0652664,1.0136618 3.0174954,0.052733574 4.2656744,0.052733574 4.772014,0.052733574 5.1350157,0.21386494 5.3546998,0.53612767 5.5743839,0.85838941&#xD;&#xA;5.5961885,1.2773312 5.4201137,1.7929509 5.3761326,1.9218556 5.2934961,2.1122837 5.1721539,2.3642341 5.0508117,2.6161846 4.9680546,2.8066127 4.9238927,2.9355173 3.863565,6.0409549 3.4536381,8.1034339 3.694112,9.1229546 3.9117764,10.072164 4.8213205,10.546768 6.4227546,10.546768 7.141041,10.546768 8.0905168,10.300677 9.2711718,9.8084947 10.538664,9.2694371 11.468817,8.6835061 12.061621,8.0506995 12.173679,7.7225778 12.431596,7.0018821 12.835354,5.8886124&#xD;&#xA;13.239121,4.7753427 13.490939,4.0722248 13.590849,3.7792588 13.670883,3.5448862 13.77033,3.1933267 13.88918,2.7245815 14.00804,2.2558362 14.105548,1.9101367 14.181724,1.687483 14.3497,1.1953 14.661445,0.79100809 15.116901,0.4746043 15.572366,0.1582015 16.047365,1.0883414E-07 16.541928,1.0883414E-07 z" Fill="White" RenderTransformOrigin="4.67795092974829,0.542031516265446" Stretch="Fill" Margin="124.109,7.611,272.191,9.299">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path7" Data="M21.511992,3.5527136E-15 C22.018331,3.5527136E-15 22.380328,0.16406034 22.597983,0.49218201 22.815647,0.82030368 22.838456,1.2363155 22.666431,1.7402164 22.454293,2.3613041 22.121597,3.2665679 21.668342,4.4560098 21.215087,5.6454508 20.880452,6.5565735 20.664455,7.1893801 20.228212,8.4667112 19.616457,10.327043 18.829169,12.770379 18.041881,15.213713 17.430126,17.074046 16.993883,18.351376 16.817808,18.866996 16.509901,19.285937 16.070171,19.608199 15.630441,19.930462 15.157411,20.091593&#xD;&#xA;14.651072,20.091593 14.132956,20.091593 13.764066,19.930462 13.544382,19.608199 13.324697,19.285937 13.302893,18.866996 13.478978,18.351376 13.787156,17.449042 14.500107,15.275235 15.61784,11.829958 14.758427,11.794802 14.340501,11.777225 14.364055,11.777225 11.58509,11.777225 8.7922398,12.093627 5.9855025,12.726433 5.7575387,13.394395 5.3625133,14.37876 4.8004263,15.679528 4.254537,16.933422 3.8595116,17.917787 3.6153601,18.632623 3.4392852,19.148243&#xD;&#xA;3.1333171,19.570114 2.6974457,19.898235 2.2615743,20.226357 1.7845856,20.390418 1.2664797,20.390418 0.76014013,20.390418 0.39814319,20.226357 0.18048884,19.898235 -0.037175555,19.570114 -0.057965308,19.148243 0.11810954,18.632623 0.26217077,18.210752 0.51520488,17.63361 0.87720182,16.901196 1.2391988,16.168781 1.4922329,15.591639 1.6362941,15.169768 1.8763962,14.46665 2.2199044,13.409044 2.6668087,11.996948 3.1137231,10.584854 3.4572213,9.5272474 3.6973334,8.8241295&#xD;&#xA;3.9534422,8.0741371 4.3255577,6.9843042 4.8136798,5.5546307 5.3137593,4.1249582 5.6918535,3.0351252 5.9479624,2.2851328 6.1240473,1.7695131 6.4319446,1.3505723 6.8716745,1.0283096 7.3114145,0.70604784 7.7844442,0.54491647 8.2907837,0.54491647 8.8088897,0.54491647 9.1777897,0.70604784 9.3974738,1.0283096 9.6171479,1.3505723 9.6389525,1.7695131 9.4628777,2.2851328 9.1747552,3.1288743 8.7963797,4.2714407 8.3277611,5.7128321 7.8188493,7.3065659 7.4521598,8.4491333&#xD;&#xA;7.2276928,9.1405323 10.352557,8.4725701 13.529751,8.2030418 16.759297,8.3319465 L17.14954,7.1893801 C17.389642,6.4862622 17.723303,5.5780684 18.150533,4.4647987 18.609766,3.257779 18.943427,2.3495852 19.151516,1.7402164 19.323541,1.2363155 19.630434,0.82030368 20.072193,0.49218201 20.513953,0.16406034 20.993886,3.5527136E-15 21.511992,3.5527136E-15 z" Fill="White" RenderTransformOrigin="2.96585704908194,0.548275843067156" Stretch="Fill" Margin="139.448,7.312,251.794,9.281">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path8" Data="M7.544688,1.0658141E-14 C8.5455805,1.0658141E-14 8.9363756,0.5624943 8.7170533,1.6874829 8.6804476,1.8632621 8.3274639,3.0175474 7.6581122,5.1503388 L4.8866944,13.886578 C7.1970399,12.328 9.7239345,10.35927 12.467378,7.9803881 13.319979,7.2421136 15.694995,5.0976043 19.592415,1.5468593 20.603256,0.6210877 21.503134,0.1582014 22.292079,0.1582014 22.786642,0.1582014 23.145695,0.32226273 23.369237,0.65038441 23.59279,0.97850608 23.618544,1.3945169 23.446518,1.8984178 23.002186,3.1991866 22.356388,5.1591277 21.509122,7.7782411 20.661857,10.397356 20.016149,12.357297 19.571998,13.658065 19.415979,14.115091 19.160322,14.794772&#xD;&#xA;18.805037,15.697107 18.449763,16.599441 18.194106,17.279122 18.038088,17.736148 17.869921,18.228331 17.561008,18.641413 17.111341,18.975394 16.661673,19.309374 16.189558,19.476365 15.694995,19.476365 15.188665,19.476365 14.824729,19.309374 14.603206,18.975394 14.381683,18.641413 14.355005,18.228331 14.523172,17.736148 14.783331,16.974437 15.206833,15.83773 15.793658,14.326027 16.380494,12.814323 16.803986,11.677616 17.064144,10.915905 17.556316,9.4745129&#xD;&#xA;17.912605,8.1034338 18.133023,6.802665 15.976134,8.9120186 14.431824,10.382707 13.500103,11.21473 11.707693,12.808464 10.028988,14.120951 8.463979,15.15219 6.402387,16.499833 4.844934,17.577947 3.7915999,18.386533 2.9474596,19.031057 2.1839059,19.35332 1.5009489,19.35332 0.98283288,19.35332 0.58136657,19.218555 0.29656001,18.949027 -0.011618699,18.644342 -0.079604911,18.240049 0.09260137,17.736148 1.233154,14.396338 2.362744,10.915905 3.4813915,7.294848&#xD;&#xA;4.6364738,3.5331672 5.1980082,1.6992018 5.1659946,1.7929508 5.5742635,0.59764994 6.367158,1.0658141E-14 7.544688,1.0658141E-14 z" Fill="White" RenderTransformOrigin="1.97541615536823,0.522563181064288" Stretch="Fill" Margin="160.473,8.314,229.99,9.193">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path9" Data="M7.7901145,8.3475687E-08 C8.2846674,8.3475687E-08 8.6506736,0.15234154 8.8881028,0.45702645 9.1255421,0.76171036 9.1642278,1.1484254 9.0041597,1.6171707 8.7119878,2.472631 8.1629635,4.2011285 7.3570968,6.8026651 7.6750222,6.8026651 8.1048245,6.8026651 8.6464835,6.8026651 10.11508,6.7089161 11.369328,6.0702505 12.409228,4.8866685 12.745743,4.4530799 13.185111,3.8905856 13.727322,3.1991856 15.274295,1.3242047 16.718967,0.38671416 18.061348,0.38671416 18.485262,0.38671416 18.892888,0.48632315&#xD;&#xA;19.284226,0.68553913 19.784858,0.94334952 19.963143,1.2831901 19.819082,1.7050608 19.502985,2.6308324 18.944586,3.0937187 18.143864,3.0937187 17.48445,3.0937187 16.533326,3.8788668 15.290483,5.4491628 14.431813,6.515559 13.953076,7.107349 13.854272,7.2245358 13.261095,7.8924981 12.678771,8.4081178 12.107299,8.7713951 13.000565,9.6034177 13.768721,10.974498 14.411756,12.884634 15.074115,14.841646 15.235198,16.318194 14.895005,17.314278 14.734937,17.783023&#xD;&#xA;14.419393,18.163878 13.948383,18.456844 13.477373,18.74981 13.012251,18.896292 12.553018,18.896292 11.728753,18.896292 11.302678,18.480281 11.274805,17.648258 11.246931,16.816236 10.870535,15.41 10.145617,13.429551 9.3664279,11.331916 8.761013,10.277239 8.329382,10.265521 8.211627,10.265521 7.505117,10.265521 6.209832,10.265521 6.0777281,10.652235 5.8377165,11.337775 5.4897971,12.32214 5.1659733,13.236194 4.9240324,13.927593 4.7639644,14.396338&#xD;&#xA;4.1076754,16.318194 3.7040085,17.413886 3.5529537,17.683414 3.0403642,18.632623 2.3012779,19.107227 1.3357149,19.107227 0.84115192,19.107227 0.47023217,18.960745 0.22294564,18.667779 -0.024330842,18.374814 -0.065910349,17.988099 0.098207121,17.507635 0.28623934,16.956859 0.60490838,16.09261 1.0542042,14.914888 1.5035101,13.737165 1.8241988,12.867057 2.0162804,12.304562 2.3964043,11.191293 2.9254126,9.5213875 3.6033154,7.2948471 4.2812281,5.0683077 4.8122561,3.3925437&#xD;&#xA;5.1964294,2.2675551 5.7126966,0.75585142 6.577265,8.3475687E-08 7.7901145,8.3475687E-08 z" Fill="White" RenderTransformOrigin="1.16276305790894,0.542778294796505" Stretch="Fill" Margin="183.91,8.121,210.245,9.756">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path10" Data="M11.979781,3.4970273E-07 C12.99245,3.4970273E-07 14.512332,0.014649201 16.539429,0.043945904 18.566515,0.073242607 20.086398,0.087890459 21.099067,0.087890459 21.570077,0.087890459 21.920257,0.26074071 22.149598,0.6064402 22.378938,0.9521397 22.413574,1.3593616 22.253506,1.8281068 21.993348,2.5898181 21.573714,3.7323845 20.994606,5.2558071 20.415507,6.7792286 19.995874,7.921795 19.735715,8.6835063 19.407661,9.6444346 18.99898,11.074107 18.509662,12.972526 18.020345,14.870944 17.609543,16.306476&#xD;&#xA;17.277259,17.279122 17.105234,17.783024 16.798341,18.199035 16.356581,18.527156 15.914832,18.855278 15.434899,19.01934 14.916783,19.01934 14.410454,19.01934 14.048457,18.855278 13.830792,18.527156 13.613138,18.199035 13.590318,17.783024 13.762354,17.279122 14.086539,16.329914 14.492236,14.917818 14.979434,13.042837 15.466631,11.167856 15.872328,9.7557614 16.196513,8.8065521 16.284465,8.5487427 16.927782,6.8026664 18.126464,3.5683242 17.66723,3.5683242&#xD;&#xA;16.446644,3.5566053 14.464724,3.5331685 12.96541,3.5097308 11.738845,3.4980119 10.785048,3.4980119 10.372921,3.4980119 9.5089149,3.580043 8.193021,3.7441034 7.9404089,4.5526892 7.5326022,5.9882216 6.9696008,8.0507007 6.4711692,9.8553694 6.0418392,11.285043 5.6815906,12.339719 5.489499,12.902214 5.1483923,13.745955 4.6582404,14.870944 4.1680986,15.995932 3.8249622,16.845534 3.6288311,17.419746 3.4567956,17.923648 3.1499031,18.339658 2.7081535,18.66778&#xD;&#xA;2.2663938,18.995902 1.786461,19.159963 1.268355,19.159963 0.76201552,19.159963 0.40001858,18.995902 0.18236423,18.66778 -0.035300169,18.339658 -0.058109614,17.923648 0.1139158,17.419746 0.31004688,16.845534 0.65612744,15.995932 1.1521575,14.870944 1.6481976,13.745955 1.9922484,12.902214 2.1843401,12.339719 2.556546,11.249886 3.0382272,9.6239268 3.6293837,7.4618397 4.2205302,5.2997516 4.702121,3.6737921 5.074146,2.5839591 5.2943827,1.9394347 5.6786465,1.4091661&#xD;&#xA;6.2269273,0.99315528 6.775208,0.5771435 7.3731772,0.36913761 8.0208147,0.36913761 8.4447187,0.36913761 9.1016106,0.30761523 9.9914703,0.18456948 10.88132,0.061523726 11.5441,3.4970273E-07 11.979781,3.4970273E-07 z" Fill="White" RenderTransformOrigin="-0.308831410756147,0.527522933372383" Stretch="Fill" Margin="213.914,8.385,177.756,9.439">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path11" Data="M13.563506,3.1110001 C11.738211,3.1110001 9.9100719,3.8521952 8.0790791,5.3345855 6.2480763,6.8169757 5.0023926,8.5249462 4.342008,10.458499 3.6856832,12.380333 3.5349394,13.821708 3.8897867,14.782625 4.244634,15.743542 5.1050624,16.224 6.4710919,16.224 7.6015949,16.224 8.6313575,16.018927 9.5603797,15.60878 10.060303,15.386127 10.807078,14.940825 11.800685,14.27287 12.484433,11.167468 13.090433,8.8413464 13.618705,7.2945045 13.790742,6.7906083 14.01021,6.242769&#xD;&#xA;14.27711,5.6509847 14.543999,5.0592004 14.856299,4.4293308 15.214,3.7613761 14.854269,3.5387249 14.536361,3.3746664 14.260268,3.2691997 13.984174,3.1637329 13.751923,3.1110001 13.563506,3.1110001 z M14.396364,6.1035156E-08 C15.420847,6.1035156E-08 16.478913,0.26367587 17.570571,0.79102648 18.947951,1.447286 19.478597,2.2383134 19.162498,3.1641078 19.054486,3.4805183 18.840682,3.7617724 18.521087,4.0078699 18.251353,4.4531894 17.909982,5.1856219 17.497006,6.2051677 17.084019,7.2247134 16.599516,8.5313733 16.043488,10.125146 15.535471,11.578292 15.243379,12.726746 15.167211,13.570508 15.108879,14.08614 15.12765,15.117405 15.223513,16.664303 15.234004,16.875244 15.263346,17.185795&#xD;&#xA;15.311549,17.595957 L15.315689,17.894789 C15.155434,18.363546 14.858418,18.750271 14.42465,19.054962 13.990883,19.359655 13.556151,19.512 13.120444,19.512 12.896713,19.512 12.578494,19.254184 12.165789,18.738552 11.80001,18.258076 11.551609,17.830336 11.420606,17.45533 10.082043,18.064714 8.9299128,18.524682 7.9642135,18.835233 6.9985142,19.145785 6.2271647,19.30106 5.6501548,19.30106 2.8946416,19.30106 1.1511014,18.527611 0.41954419,16.980713 -0.27356708,15.527567 -0.10788599,13.300973&#xD;&#xA;0.91660755,10.30093 1.8849697,7.4649509 3.6936448,5.0391348 6.3426229,3.0234807 8.991601,1.0078266 11.676181,6.1035156E-08 14.396364,6.1035156E-08 z" Fill="White" RenderTransformOrigin="-1.50509903207039,0.516184319168104" Stretch="Fill" Margin="235.983,8.42,158.788,9.052">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path12" Data="M16.603554,4.693 C15.520266,4.693 14.460901,4.9332344 13.425461,5.4137011 12.685487,5.7535442 11.68453,6.3746366 10.422601,7.2769782 9.6673546,9.9371272 8.7894843,12.732042 7.789,15.661721 8.9044718,16.153908 10.103944,16.4 11.387395,16.4 12.859254,16.4 14.169755,15.855081 15.318907,14.76524 16.314247,13.816023 17.070036,12.585557 17.586294,11.073843 18.314492,8.9410358 18.5977,7.34436 18.43586,6.2838168 18.274079,5.2232726 17.663291,4.693&#xD;&#xA;16.603554,4.693 z M11.123141,-2.6645349E-15 C11.582378,-2.6645349E-15 11.913007,0.16113164 12.115028,0.48339391 12.317049,0.80565718 12.33803,1.2011618 12.177961,1.6699079 12.141898,1.775375 12.058175,1.9687333 11.926814,2.249981 11.743925,2.6132589 11.588729,2.9472401 11.461226,3.2519255 12.709958,2.5605253 13.864347,2.0419747 14.924432,1.6962746 15.984457,1.3505746 16.9443,1.177724 17.803902,1.177724 20.217855,1.177724 21.620034,2.244121 22.010461,4.3769159 22.317356,6.0644017 21.996574,8.2968048&#xD;&#xA;21.048105,11.074125 20.183721,13.605354 18.788434,15.691273 16.862246,17.331884 14.821618,19.066245 12.594322,19.933425 10.180379,19.933425 9.0028396,19.933425 7.7715816,19.745927 6.4865953,19.37093 L3.5818636,27.773202 C3.4057773,28.288823 3.0998066,28.710694 2.6639316,29.038816 2.2280666,29.366938 1.7569522,29.531 1.2506185,29.531 0.74427474,29.531 0.38521894,29.366938 0.17345107,29.038816 -0.038326839,28.710694 -0.056172615,28.288823 0.1199037,27.773202 L2.5739591,20.742011 4.969232,13.728399 C5.8102544,11.162015 6.5202671,8.8241443 7.0992801,6.7147872 L8.0528133,3.1464574 C8.3368887,2.3144334 8.7300786,1.6113144 9.2323729,1.0371002 9.8216854,0.34570007 10.451945,-2.6645349E-15 11.123141,-2.6645349E-15 z" Fill="White" RenderTransformOrigin="-2.00333378137977,0.373799955015181" Stretch="Fill" Margin="251.333,7.453,140.566,0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path13" Data="M13.562659,3.1110001 C11.737522,3.1110001 9.9095418,3.8521952 8.0786979,5.3345855 6.247864,6.8169757 5.0022884,8.5249462 4.3419612,10.458499 3.6856832,12.380333 3.5349425,13.821708 3.8897892,14.782625 4.2445755,15.743542 5.1049493,16.224 6.4708602,16.224 7.6012651,16.224 8.6309383,16.018927 9.5598699,15.60878 10.05976,15.386127 10.80647,14.940825 11.799991,14.27287 12.48368,11.167468 13.089627,8.8413464 13.617853,7.2945045 13.789875,6.7906083 14.009345,6.242769&#xD;&#xA;14.27618,5.6509847 14.543087,5.0592004 14.85534,4.4293308 15.213,3.7613761 14.85331,3.5387249 14.53542,3.3746664 14.25938,3.2691997 13.98328,3.1637329 13.75106,3.1110001 13.562659,3.1110001 z M14.39563,6.1035156E-08 C15.420061,6.1035156E-08 16.478063,0.26367587 17.569655,0.79102648 18.946975,1.447286 19.477583,2.2383134 19.161501,3.1641078 19.053504,3.4805183 18.839711,3.7617724 18.520122,4.0078699 18.250402,4.4531894 17.909049,5.1856219 17.496123,6.2051677 17.083138,7.2247134 16.59867,8.5313733 16.04267,10.125146 15.534679,11.578292 15.242602,12.726746 15.166438,13.570508 15.108109,14.08614 15.126878,15.117405 15.222737,16.664303 15.233217,16.875244 15.262568,17.185795&#xD;&#xA;15.310768,17.595957 L15.314908,17.894789 C15.154661,18.363546 14.85764,18.750271 14.423925,19.054962 13.99015,19.359655 13.55545,19.512 13.119776,19.512 12.896046,19.512 12.577843,19.254184 12.165169,18.738552 11.799399,18.258076 11.551021,17.830336 11.420024,17.45533 10.081531,18.064714 8.9294387,18.524682 7.963819,18.835233 6.998139,19.145785 6.2268489,19.30106 5.6498686,19.30106 2.8944963,19.30106 1.1510453,18.527611 0.41951548,16.980713 -0.27355029,15.527567 -0.10787768,13.300973&#xD;&#xA;0.91655341,10.30093 1.8848761,7.4649509 3.6934587,5.0391348 6.3422912,3.0234807 8.9911338,1.0078266 11.675577,6.1035156E-08 14.39563,6.1035156E-08 z" Fill="White" RenderTransformOrigin="-3.47131352314827,0.516184319168104" Stretch="Fill" Margin="273.835,8.42,120.937,9.052">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path14" Data="M24.797616,0 C25.975136,0 26.389484,1.1660042 26.040641,3.4980115 26.032542,3.5214493 25.944961,4.0019124 25.7779,4.9394029 25.126213,8.5721791 24.80666,11.671757 24.81926,14.238137 24.831871,16.804518 24.802218,18.193176 24.730273,18.40411 24.598169,18.790825 24.313453,19.107228 23.876105,19.35332 23.438766,19.599411 23.00814,19.722456 22.584236,19.722456 21.571567,19.722456 21.1241,18.825981 21.241855,17.03303 21.292267,16.540848 21.343875,15.855308&#xD;&#xA;21.396678,14.976411 21.429616,13.535019 21.732188,10.787001 22.304393,6.7323537 21.132018,8.3378065 19.364165,10.669814 17.000836,13.728377 16.43065,14.501806 15.860384,15.275236 15.290017,16.048665 14.608899,16.974438 13.978002,17.71857 13.397335,18.281065 12.745458,18.913871 12.042716,19.230274 11.2891,19.230274 10.665015,19.230274 10.262544,18.960746 10.081676,18.421688 10.020231,18.222471 9.9690759,17.337715 9.9282299,15.767418 9.8789233,13.119008&#xD;&#xA;10.010012,10.183491 10.321507,6.9608674 L9.237998,8.7889739 C8.2985604,10.19521 6.924628,12.322141 5.1162008,15.169768 4.7618405,15.931479 4.1225732,17.044749 3.1983988,18.509578 2.6523286,19.177541 2.014257,19.511521 1.284184,19.511521 0.17731299,19.511521 -0.21402473,19.036917 0.11016078,18.087708 0.57049958,16.740065 1.4900719,15.081878 2.8688777,13.113148 4.9094889,10.171772 6.0151742,8.5546013 6.1859135,8.2616352 6.9203876,6.9725853 7.6549623,5.6835364 8.3896274,4.3944864 9.4372641,2.6366923 10.310283,1.476548&#xD;&#xA;11.008704,0.91405373 11.596726,0.4335896 12.202784,0.19335804 12.826878,0.19335804 13.509845,0.19335804 13.915994,0.50390089 14.045335,1.1249886 14.197686,1.8515442 14.11939,3.3222323 13.810478,5.5370539 13.464216,8.0682782 13.320245,10.869031 13.378565,13.939312 15.926802,10.822156 18.27311,7.6581254 20.4175,4.4472209 20.779034,3.8026964 21.366141,2.859346 22.178821,1.6171716 23.006211,0.53905753 23.879139,0 24.797616,0 z" Fill="White" RenderTransformOrigin="-3.19108250283766,0.528520517546631" Stretch="Fill" Margin="290.491,8.068,97.371,9.193">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path15" Data="M11.931528,3.164 C10.494985,3.164 9.1107116,3.717702 7.7787583,4.8251058 6.446835,5.9325096 5.1652322,7.5994743 3.934,9.8259998 L10.232622,7.2596359 C12.716046,6.2284028 14.541165,5.3319335 15.708,4.570227 15.015482,3.6327423 13.756658,3.164 11.931528,3.164 z M13.012016,3.4332274E-08 C14.966686,3.4332274E-08 16.45017,0.32812958 17.462468,0.98438868 18.7053,1.7929929 19.040615,3.0351981 18.468415,4.7110023 18.068239,5.8828936 17.038749,6.9493144 15.379925,7.9102657 14.647106,8.3321465 13.174846,8.9884056 10.963144,9.879043 L3.1297319,13.060727 C3.4568584,14.033398 4.0279834,14.76583 4.8431672,15.258024 5.6582906,15.750218 6.719402,15.996315 8.0264411,15.996315 8.8389219,15.996315 9.8447787,15.84397 11.044001,15.539277 12.565578,15.152553 13.633552,14.64571 14.248005,14.018748 14.862397,13.391787 15.399238,13.078306 15.858477,13.078306 16.2706,13.078306 16.585559,13.233581 16.803271,13.544133 17.021054,13.854684 17.0599,14.21504 16.91989,14.625203 16.475743,15.926002 15.039736,17.045157&#xD;&#xA;12.61185,17.98267 10.537948,18.779556 8.6473043,19.178 6.9399079,19.178 4.2787242,19.178 2.349998,18.515882 1.1537193,17.191644 -0.14762257,15.72678 -0.34807247,13.675971 0.55235948,11.039215 1.5928019,7.9922978 3.2070019,5.4375754 5.3949696,3.3750468 7.7764942,1.1250156 10.315513,3.4332274E-08 13.012016,3.4332274E-08 z" Fill="White" RenderTransformOrigin="-6.01161995858808,0.526106360789506" Stretch="Fill" Margin="319.665,8.402,75.618,9.404">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path16" Data="M2.4340149,2.1175824E-22 L12.855107,2.1175824E-22 C13.726478,2.1175824E-22 14.326467,0.087890109 14.655064,0.26366933 15.128104,0.53319759 15.232605,1.0546773 14.968578,1.8281065 14.792503,2.3437262 14.48552,2.7685269 14.047629,3.1025075 13.609738,3.4364892 13.137623,3.6034795 12.631283,3.6034795 12.313358,3.6034795 11.844428,3.5888306 11.224453,3.5595339 10.604539,3.5302382 10.135579,3.5155894 9.817643,3.5155894 9.464388,3.5155894 9.0166497,3.550745 8.4744381,3.6210573 6.6246223,9.7967757 5.3235494,13.986186&#xD;&#xA;4.5712196,16.189289 3.7708694,18.533015 2.7466047,19.704878 1.4984358,19.704878 1.0274258,19.704878 0.67024192,19.552536 0.42691439,19.247852 0.18358685,18.943167 0.13995751,18.562312 0.29597612,18.105285 0.44813622,17.659977 0.69394566,16.992016 1.0334045,16.1014 1.3728632,15.210784 1.6185823,14.542822 1.7705514,14.097513 2.298786,12.550654 3.369594,9.070221 4.9829854,3.6562129 4.6023188,3.6327762 3.85854,3.6210573 2.751669,3.6210573 1.7272235,3.6210573&#xD;&#xA;1.0388305,3.550745 0.68648989,3.4101214 0.032783266,3.152312 -0.15405321,2.6132545 0.1259704,1.7929508 0.2941373,1.3007678 0.59425733,0.87889709 1.0263506,0.52733865 1.458474,0.17577922 1.9276753,2.1175824E-22 2.4340149,2.1175824E-22 z" Fill="White" RenderTransformOrigin="-8.98316341875716,0.52274752971182" Stretch="Fill" Margin="342.751,8.191,56.161,9.088">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path17" Data="M16.602555,4.693 C15.519276,4.693 14.459912,4.9332344 13.424461,5.4137011 12.684487,5.7535442 11.683531,6.3746366 10.421601,7.2769782 9.6663649,9.9371272 8.7884945,12.732042 7.7880001,15.661721 8.903482,16.153908 10.102954,16.4 11.386406,16.4 12.858255,16.4 14.168755,15.855081 15.317907,14.76524 16.313247,13.816023 17.069046,12.585557 17.585295,11.073843 18.313492,8.9410358 18.596701,7.34436 18.43486,6.2838168 18.27308,5.2232726 17.662291,4.693&#xD;&#xA;16.602555,4.693 z M11.123142,-2.6645349E-15 C11.582379,-2.6645349E-15 11.913008,0.16113164 12.115029,0.48339391 12.31705,0.80565718 12.338021,1.2011618 12.177951,1.6699079 12.141888,1.775375 12.058176,1.9687333 11.926804,2.249981 11.743915,2.6132589 11.588719,2.9472401 11.461216,3.2519255 12.709959,2.5605253 13.864337,2.0419747 14.924432,1.6962746 15.984457,1.3505746 16.944301,1.177724 17.803902,1.177724 20.217845,1.177724 21.620035,2.244121 22.010461,4.3769159 22.317356,6.0644017 21.996564,8.2968048&#xD;&#xA;21.048096,11.074125 20.183721,13.605354 18.788425,15.691273 16.862236,17.331884 14.821608,19.066245 12.594323,19.933425 10.18037,19.933425 9.0028403,19.933425 7.7715823,19.745927 6.4865961,19.37093 L3.5818545,27.773202 C3.4057782,28.288823 3.0997975,28.710694 2.6639325,29.038816 2.2280575,29.366938 1.7569531,29.531 1.2506094,29.531 0.74427573,29.531 0.38521994,29.366938 0.17344203,29.038816 -0.038325827,28.710694 -0.056171602,28.288823 0.1199047,27.773202 L2.5739601,20.742011 4.9692329,13.728399 C5.8102452,11.162015 6.5202679,8.8241443 7.0992809,6.7147872 L8.052804,3.1464574 C8.3368895,2.3144334 8.7300793,1.6113144 9.2323635,1.0371002 9.8216861,0.34570007 10.451945,-2.6645349E-15 11.123142,-2.6645349E-15 z" Fill="White" RenderTransformOrigin="-6.58121449282298,0.373799955015181" Stretch="Fill" Margin="352.613,7.453,39.286,0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path18" Data="M13.598824,3.533 C11.785379,3.533 9.9091103,4.4411835 7.9699985,6.2575505 6.1451483,7.9801695 4.8766039,9.8844257 4.1643552,11.970319 3.6841367,13.376539 3.8297698,14.519092 4.6012545,15.397979 5.3414581,16.229992 6.4828687,16.646 8.0254663,16.646 9.8153577,16.646 11.626964,15.737816 13.460275,13.921448 15.151178,12.245703 16.360758,10.341447 17.089004,8.2086806 17.697281,6.4274689 17.735736,5.2028852 17.204371,4.5349315 16.672996,3.8669768 15.471143,3.533&#xD;&#xA;13.598824,3.533 z M14.805017,-4.9630837E-24 C20.645555,-4.9630837E-24 22.631338,2.7362357 20.762386,8.2087051 19.774001,11.103137 18.065107,13.728048 15.635725,16.083437 12.807447,18.813813 9.8684084,20.179 6.8186176,20.179 4.3222536,20.179 2.4528393,19.446603 1.2103647,17.981809 -0.11012442,16.434987 -0.35013662,14.431149 0.49031805,11.970296 1.4787129,9.0758625 3.2701127,6.4333746 5.8645374,4.0428312 8.7750596,1.3476111 11.755216,-4.9630837E-24 14.805017,-4.9630837E-24 z" Fill="White" RenderTransformOrigin="-7.86000127129653,0.53571471659583" Stretch="Fill" Margin="375.54,7.682,17.04,9.123">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path19" Data="M5.7506163,10.74 C5.4314016,11.536843 5.1777723,12.210644 4.9897283,12.761403 L3.819,16.189 C9.0998779,15.966353 11.988435,15.128495 12.48465,13.675428 12.700659,13.042642 12.439573,12.44501 11.701405,11.882532 11.135273,11.437237 10.48569,11.132562 9.7526762,10.968506 9.3254523,10.87476 8.6664039,10.822028 7.775521,10.810309 6.6647711,10.786873 5.9898062,10.763436 5.7506163,10.74 z M10.328765,3.023 C9.4339108,3.023 8.821543,3.0405777 8.4916721,3.075733 8.3437621,3.4741632 8.1177426,4.1186816 7.8136335,5.0092891 7.737654,5.2319408 7.6170533,5.6713852 7.4518415,6.3276223 7.3109146,6.8783926 7.1706408,7.3236968 7.031,7.6635342 7.6782227,7.7338448 8.2726557,7.7690001 8.8142787,7.7690001 10.133019,7.7690001 11.120602,7.6869707 11.777029,7.5229119 13.015369,7.2065111 13.796626,6.5737115 14.12079,5.6245111 14.364925,4.9096811 14.084458,4.2827403&#xD;&#xA;13.279378,3.7436889 12.572171,3.2632293 11.830009,3.023 11.052902,3.023 z M11.484573,-5.3290707E-15 C13.380405,-5.3290707E-15 14.943577,0.45701985 16.174102,1.3710605 17.61143,2.4374405 18.027982,3.8553749 17.423758,5.6248628 16.863515,7.2654477 15.570159,8.4665904 13.543689,9.2282908 14.306697,9.6150004 14.946341,10.241938 15.462612,11.109104 16.056717,12.093455 16.211722,13.001636 15.927647,13.833647 15.195368,15.978126 13.005061,17.495667 9.3567261,18.38627 7.0684482,18.948757 4.4229535,19.23 1.420242,19.23 0.96100478,19.23 0.58440477,19.048363&#xD;&#xA;0.29048213,18.685091 -0.0034103739,18.321819 -0.074311136,17.917532 0.077850179,17.47223 L1.218221,14.132468 C1.2301785,14.097312 2.3615259,10.956764 4.6122734,4.7108231 4.8124555,4.1248994 5.0125472,3.5389767 5.2125484,2.9530529 5.4684684,2.2382264 5.741149,1.6640224 6.03056,1.230439 6.2368112,0.90232198 6.4914551,0.67381156 6.7944915,0.54490871 6.9361624,0.47459842 7.2919926,0.38085071 7.8619921,0.26366557 8.6284961,0.087888856 9.8360197,-5.3290707E-15 11.484573,-5.3290707E-15 z" Fill="White" RenderTransformOrigin="-10.7009586590672,0.527424161255461" Stretch="Fill" Margin="396.33,8.35,0,9.404">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <StackPanel Height="100" Orientation="Horizontal" Margin="27.007,0,27.006,0">
+            <Path Data="M-182.5,162 L-38.5,162" Fill="White" Height="2.297" Stretch="Fill" Stroke="White" Width="141" Margin="0,5,0,0" />
+            <TextBlock TextWrapping="Wrap" Text="ver. 1.0" FontFamily="Comic Sans MS" FontSize="16" Foreground="White" Width="57.95" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Path Data="M-182.5,162 L-38.5,162" Fill="White" Height="2.297" Stretch="Fill" Stroke="White" Width="141" Margin="0,5,5,0"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>
