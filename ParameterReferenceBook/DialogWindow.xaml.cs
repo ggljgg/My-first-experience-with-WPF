@@ -26,15 +26,21 @@ namespace ParameterReferenceBook
             set { tbName.Text = value; }
         }
 
-        public short ParameterMinValue
+        public short? ParameterMinValue
         {
-            get { return Convert.ToInt16(tbMin.Text); }
+            get
+            {
+                if (String.IsNullOrEmpty(tbMin.Text))
+                    return null;
+                else
+                    return Convert.ToInt16(tbMin.Text);
+            }
             set { tbMin.Text = value.ToString(); }
         }
 
         public short ParameterMaxValue
         {
-            get { return Convert.ToInt16(tbMin.Text); }
+            get { return Convert.ToInt16(tbMax.Text); }
             set { tbMax.Text = value.ToString(); }
         }
 
@@ -58,7 +64,29 @@ namespace ParameterReferenceBook
 
         private void acceptButton_Click(object sender, RoutedEventArgs e)
         {
+            if (tbMax.BorderBrush == Brushes.Red)
+                return;
             DialogResult = true;
+        }
+
+        private void tb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0))
+                e.Handled = true;
+        }
+
+        private void tb_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+                e.Handled = true;
+        }
+
+        private void tbMax_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbMax.Text))
+                (sender as TextBox).BorderBrush = Brushes.Red;
+            else
+                tbMax.BorderBrush = Brushes.Gray;
         }
     }
 }

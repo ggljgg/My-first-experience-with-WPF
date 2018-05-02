@@ -47,7 +47,7 @@ namespace ParameterReferenceBook
 
                     var id = (dataGridView.SelectedItem as Parameter).IdParameter;
                     Parameter parameter = db.Parameters.Find(id);
-
+                    
                     DialogWindow dialogWindow = new DialogWindow(this);
 
                     dialogWindow.ParameterName = parameter.Name;
