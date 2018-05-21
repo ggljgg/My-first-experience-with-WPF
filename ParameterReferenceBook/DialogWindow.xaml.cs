@@ -56,15 +56,17 @@ namespace ParameterReferenceBook
             InitializeComponent();
         }
 
-        public DialogWindow(MainWindow parentWindow)
+        public DialogWindow(MainWindow parentWindow, String parentButton)
         {
             InitializeComponent();
             Owner = parentWindow;
+            if (parentButton == "addButton")
+                tbName.IsEnabled = true;
         }
 
         private void acceptButton_Click(object sender, RoutedEventArgs e)
         {
-            if (tbMax.BorderBrush == Brushes.Red)
+            if (tbName.BorderBrush == Brushes.Red || tbMax.BorderBrush == Brushes.Red)
                 return;
             DialogResult = true;
         }
@@ -83,10 +85,10 @@ namespace ParameterReferenceBook
 
         private void tbMax_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (String.IsNullOrEmpty(tbMax.Text))
+            if (String.IsNullOrEmpty((sender as TextBox).Text))//tbMax.Text))
                 (sender as TextBox).BorderBrush = Brushes.Red;
             else
-                tbMax.BorderBrush = Brushes.Gray;
+                /*tbMax*/ (sender as TextBox).BorderBrush = Brushes.Gray;
         }
     }
 }

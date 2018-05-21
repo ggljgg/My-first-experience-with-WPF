@@ -20,7 +20,7 @@ namespace ParameterReferenceBook
 
         public void WriteInLog(String eventInfo)
         {
-           using (StreamWriter sw = new StreamWriter("app_log.dat", true, Encoding.Unicode))
+           using (StreamWriter sw = new StreamWriter("ParameterReferenceBook.log", true, Encoding.UTF8))
            {
                 sw.WriteLine(DateTime.Now.ToString() + " " + eventInfo);
            }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ParameterReferenceBook"
         mc:Ignorable="d"
-        Title="Справочник параметров" Height="400" Width="650" WindowStartupLocation="CenterScreen" Closing="Window_Closing" FontFamily="Comic Sans MS" FontSize="14" MinWidth="650" MinHeight="400" MaxHeight="720" MaxWidth="1024" Icon="Icon.ico">
+        Title="Справочник параметров" Height="400" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing" FontFamily="Comic Sans MS" FontSize="14" MinWidth="800" MinHeight="400" MaxHeight="720" MaxWidth="1024" Icon="Icon.ico">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20 8 20 20" />
@@ -39,7 +39,15 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" IsEnabled="False"/>
-        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}"/>
+        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}">
+            <TreeView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить узел"/>
+                    <MenuItem Header="Переименовать узел"/>
+                    <MenuItem Header="Удалить узел"/>
+                </ContextMenu>
+            </TreeView.ContextMenu>
+        </TreeView>
         <DataGrid x:Name="dataGridView" Grid.Row="0" Grid.Column="2" Margin="50 50 50 20" IsReadOnly="True" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" RowHeaderWidth="20" SelectionMode="Single" GridLinesVisibility="Horizontal">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Шифр" Width="Auto"/>
@@ -49,7 +57,11 @@
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="1" Grid.Column="2" >
-            <Button x:Name="updateButton" Content="Внести изменения" Click="updateButton_Click" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="addButton" Content="Добавить параметр" Click="addButton_Click"/>
+                <Button x:Name="updateButton" Content="Изменить параметр" Click="updateButton_Click" />
+                <Button x:Name="removeButton" Content="Удалить параметр" Click="removeButton_Click"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

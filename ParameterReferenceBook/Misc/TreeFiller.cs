@@ -38,7 +38,7 @@ namespace ParameterReferenceBook
                 }
                 catch (EntityException ex)
                 {
-                    MessageBox.Show("Ошибка!\r\n " + ex.Message, "Подключение к базе данных", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Ошибка!\r\n" + ex.Message, "Подключение к базе данных", MessageBoxButton.OK, MessageBoxImage.Error);
                     Logging.GetInstance().WriteInLog(ex.Message);
                     Application.Current.Shutdown();
                     return;
