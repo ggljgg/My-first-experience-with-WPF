@@ -17,19 +17,9 @@ namespace ParameterReferenceBook
 
         public MainWindow()
         {
-            try
-            {
-                InitializeComponent();
-                Logging.GetInstance().WriteInLog("Успешная инициализация программы.");
-                TreeFiller.GetInstance().FillTree(ref treeView);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Ошибка!\r\n" + ex.Message, "Подключение к базе данных", MessageBoxButton.OK, MessageBoxImage.Error);
-                Logging.GetInstance().WriteInLog(ex.Message);
-                Application.Current.Shutdown();
-                return;
-            }
+            InitializeComponent();
+            Logging.GetInstance().WriteInLog("Успешная инициализация программы.");
+            TreeFiller.GetInstance().FillTree(ref treeView);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -92,7 +82,7 @@ namespace ParameterReferenceBook
 
                     var id = (dataGridView.SelectedItem as Parameter).IdParameter;
                     Parameter parameter = db.Parameters.Find(id);   // возможно, в дальнейшем потребуется проверка parameter на null
-                    
+
                     DialogWindow dialogWindow = new DialogWindow(this, (sender as Button).Name);
 
                     dialogWindow.ParameterName = parameter.Name;
@@ -175,7 +165,7 @@ namespace ParameterReferenceBook
                     db.TypeParameters.Add(typeParameter);
                     db.SaveChanges();
 
-                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name, 
+                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name,
                                                      typeParameter.IdTypeParameter.ToString(), (sender as MenuItem).Name);
 
                     Logging.GetInstance().WriteInLog("Успешное добавление корневого типа параметра " + typeParameter.Name);
@@ -216,7 +206,7 @@ namespace ParameterReferenceBook
                     db.TypeParameters.Add(typeParameter);
                     db.SaveChanges();
 
-                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name, 
+                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name,
                                                      typeParameter.IdTypeParameter.ToString(), (sender as MenuItem).Name);
 
                     Logging.GetInstance().WriteInLog("Успешное добавление типа параметра " + typeParameter.Name);
