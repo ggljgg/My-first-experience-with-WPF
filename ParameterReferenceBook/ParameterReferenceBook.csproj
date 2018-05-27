@@ -71,7 +71,6 @@
     <Compile Include="Configuration\ParameterConfiguration.cs" />
     <Compile Include="Configuration\TypeParameterConfiguration.cs" />
     <Compile Include="Database\DatabaseContext.cs" />
-    <Compile Include="Database\DatabaseInitializer.cs" />
     <Compile Include="DialogWindow.xaml.cs" />
     <Compile Include="Editor.xaml.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
