@@ -5,34 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ParameterReferenceBook"
         mc:Ignorable="d"
-        Title="" Height="390" Width="370" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner" FontFamily="Comic Sans MS" Icon="Icon.ico" ShowInTaskbar="False" WindowStyle="ToolWindow" FontSize="14">
+        Title="" Height="390" Width="370" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" FontFamily="Comic Sans MS" Icon="Icon.ico" ShowInTaskbar="False" WindowStyle="ToolWindow" FontSize="14">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5" />
             <Setter Property="Width" Value="65" />
             <Setter Property="Height" Value="25" />
+            <Setter Property="Background" Value="#028090"/>
+            <Setter Property="Foreground" Value="#F0F3BD"/>
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Foreground" Value="#F0F3BD" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#FFF0F0F0"/>
+            <Setter Property="Foreground" Value="#FF1E1E24"/>
         </Style>
     </Window.Resources>
     <Window.Style>
         <Style TargetType="Window">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}" Offset="0.0"/>
-                        <GradientStop Color="CadetBlue" Offset="0.9"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Background" Value="#1E1E24" />
         </Style>
     </Window.Style>
-    <GroupBox x:Name="grpBox" Header="Данные о параметре" Margin="8" Padding="3" Foreground="White">
+    <GroupBox x:Name="grpBox" Header="Данные о параметре" Margin="8" Padding="3" Foreground="#FFF0F3BD" BorderBrush="#FFF0F3BD">
         <Canvas x:Name="canvas">
             <StackPanel Canvas.Left="20" Canvas.Top="10">
                 <TextBlock Text="Шифр:" Margin="3 0 3 0"/>
-                <TextBox x:Name="tbName" MaxLength="30" IsEnabled="False" Width="285"/>
+                <TextBox x:Name="tbName" MaxLength="30" TextChanged="tb_TextChanged" IsEnabled="False" Width="285"/>
             </StackPanel>
             <StackPanel Canvas.Left="205" Canvas.Top="10" Visibility="Collapsed">
                 <TextBlock Text="Тип параметра:" Margin="3 0 3 0"/>
@@ -44,7 +43,7 @@
             </StackPanel>
             <StackPanel Canvas.Left="190" Canvas.Top="75">
                 <TextBlock Text="Макс. значение:" Margin="3 0 3 0"/>
-                <TextBox x:Name="tbMax" MaxLength="4" PreviewKeyDown="tb_PreviewKeyDown" PreviewTextInput="tb_PreviewTextInput" TextChanged="tbMax_TextChanged"/>
+                <TextBox x:Name="tbMax" MaxLength="4" PreviewKeyDown="tb_PreviewKeyDown" PreviewTextInput="tb_PreviewTextInput" TextChanged="tb_TextChanged"/>
             </StackPanel>
             <StackPanel Canvas.Left="20" Canvas.Top="140">
                 <TextBlock Text="Описание:" Margin="3 0 3 0"/>

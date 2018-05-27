@@ -66,8 +66,15 @@ namespace ParameterReferenceBook
 
         private void acceptButton_Click(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(tbName.Text))
+                tbName.BorderBrush = Brushes.Red;
+
+            if (String.IsNullOrEmpty(tbMax.Text))
+                tbMax.BorderBrush = Brushes.Red;
+
             if (tbName.BorderBrush == Brushes.Red || tbMax.BorderBrush == Brushes.Red)
                 return;
+
             DialogResult = true;
         }
 
@@ -83,12 +90,12 @@ namespace ParameterReferenceBook
                 e.Handled = true;
         }
 
-        private void tbMax_TextChanged(object sender, TextChangedEventArgs e)
+        private void tb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (String.IsNullOrEmpty((sender as TextBox).Text))//tbMax.Text))
+            if (String.IsNullOrEmpty((sender as TextBox).Text) || String.IsNullOrWhiteSpace((sender as TextBox).Text))
                 (sender as TextBox).BorderBrush = Brushes.Red;
             else
-                /*tbMax*/ (sender as TextBox).BorderBrush = Brushes.Gray;
+                (sender as TextBox).BorderBrush = Brushes.Gray;
         }
     }
 }

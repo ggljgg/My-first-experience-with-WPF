@@ -11,21 +11,16 @@
             <Setter Property="Margin" Value="20 8 20 20" />
             <Setter Property="Width" Value="140" />
             <Setter Property="Height" Value="30" />
+            <Setter Property="Background" Value="#028090"/>
+            <Setter Property="Foreground" Value="#F0F3BD"/>
         </Style>
         <Style TargetType="TreeViewItem">
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="#F0F3BD"/>
         </Style>
     </Window.Resources>
     <Window.Style>
         <Style TargetType="Window">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}" Offset="0.0"/>
-                        <GradientStop Color="CadetBlue" Offset="0.9"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Background" Value="#1E1E24" />
         </Style>
     </Window.Style>
     <Grid ShowGridLines="False">
@@ -39,16 +34,17 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" IsEnabled="False"/>
-        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}">
+        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}" Foreground="#FFF0F3BD" BorderBrush="#FF1A5E63">
             <TreeView.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Добавить узел"/>
-                    <MenuItem Header="Переименовать узел"/>
-                    <MenuItem Header="Удалить узел"/>
+                    <MenuItem x:Name="addMI" Header="Добавить узел" Click="addMI_Click"/>
+                    <MenuItem x:Name="addChildMI" Header="Добавить узел к выделенному" Click="addChildMI_Click"/>
+                    <MenuItem x:Name="changeMI" Header="Переименовать выделенный узел" Click="changeMI_Click"/>
+                    <MenuItem x:Name="removeMI" Header="Удалить выделенный узел" Click="removeMI_Click" />
                 </ContextMenu>
             </TreeView.ContextMenu>
         </TreeView>
-        <DataGrid x:Name="dataGridView" Grid.Row="0" Grid.Column="2" Margin="50 50 50 20" IsReadOnly="True" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" RowHeaderWidth="20" SelectionMode="Single" GridLinesVisibility="Horizontal">
+        <DataGrid x:Name="dataGridView" Grid.Row="0" Grid.Column="2" Margin="50 50 50 20" IsReadOnly="True" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" RowHeaderWidth="20" SelectionMode="Single" GridLinesVisibility="Horizontal" Foreground="#FF1E1E24" BorderBrush="#FF1A5E63">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Шифр" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding Path=MinValue}" Header="Мин. значение" Width="0.25*"/>
@@ -59,7 +55,7 @@
         <Grid Grid.Row="1" Grid.Column="2" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="addButton" Content="Добавить параметр" Click="addButton_Click"/>
-                <Button x:Name="updateButton" Content="Изменить параметр" Click="updateButton_Click" />
+                <Button x:Name="changeButton" Content="Изменить параметр" Click="changeButton_Click" />
                 <Button x:Name="removeButton" Content="Удалить параметр" Click="removeButton_Click"/>
             </StackPanel>
         </Grid>
