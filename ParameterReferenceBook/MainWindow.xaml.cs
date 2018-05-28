@@ -272,6 +272,14 @@ namespace ParameterReferenceBook
                     }
 
                     var id = Convert.ToInt64((treeView.SelectedItem as TreeViewItem).Tag);
+
+                    if (db.TypeParameters.Where(t => t.IdTypeParameterParent == id).Count() > 0)
+                    {
+                        MessageBox.Show("Предупреждение!\r\nДанный узел содержит дочерние узлы. Удалять можно только пустые узлы.", "Удаление типа параметра", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        Logging.GetInstance().WriteInLog("Была предпринята попытка удаления типа параметра из базы данных.");
+                        return;
+                    }
+
                     TypeParameter typeParameter = db.TypeParameters.Find(id);   // возможно, в дальнейшем потребуется проверка parameter на null
 
                     db.TypeParameters.Remove(typeParameter);
@@ -287,9 +295,8 @@ namespace ParameterReferenceBook
                     Application.Current.Shutdown();
                     return;
                 }
-                catch (DbUpdateException ex)
+                catch (DbUpdateException)
                 {
-                    MessageBox.Show(ex.Message);
                     MessageBox.Show("Предупреждение!\r\nДанный узел содержит параметры. Удалять можно только пустые узлы.", "Удаление типа параметра", MessageBoxButton.OK, MessageBoxImage.Warning);
                     Logging.GetInstance().WriteInLog("Была предпринята попытка удаления типа параметра из базы данных.");
                     return;
