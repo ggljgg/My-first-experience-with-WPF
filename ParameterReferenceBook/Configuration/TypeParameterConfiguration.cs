@@ -6,7 +6,7 @@ namespace ParameterReferenceBook
     {
         public TypeParameterConfiguration()
         {
-            ToTable("TypeParameter").HasKey(t => t.IdTypeParameter);
+            ToTable("student.TypeParameter").HasKey(t => t.IdTypeParameter);
             Property(t => t.Name).IsRequired();
             Property(t => t.IdTypeParameterParent).IsRequired();
         }
