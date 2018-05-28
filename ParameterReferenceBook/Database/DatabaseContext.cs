@@ -5,13 +5,7 @@ namespace ParameterReferenceBook
 {
     public class DatabaseContext : DbContext
     {
-        static DatabaseContext()
-        {
-            Database.SetInitializer(new DatabaseInitializer());
-            Logging.GetInstance().WriteInLog("Успешная инициализация базы данных.");
-        }
-
-        public DatabaseContext() : base("name=DatabaseContext")
+        public DatabaseContext() : base("name=AccessConnection")
         { }
 
         public DbSet<Parameter> Parameters { get; set; }
