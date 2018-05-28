@@ -58,7 +58,7 @@ namespace ParameterReferenceBook
                     db.SaveChanges();
                     dataGrid_DataUpdate(db);
 
-                    Logging.GetInstance().WriteInLog("Успешное внесение параметра " + parameter.Name + "в базу данных.");
+                    Logging.GetInstance().WriteInLog("Успешное внесение параметра " + parameter.Name + " в базу данных.");
                     MessageBox.Show("Данные успешно внесены.", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 catch (SqlException ex)
@@ -168,7 +168,7 @@ namespace ParameterReferenceBook
                     TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name,
                                                      typeParameter.IdTypeParameter.ToString(), (sender as MenuItem).Name);
 
-                    Logging.GetInstance().WriteInLog("Успешное добавление корневого типа параметра " + typeParameter.Name);
+                    Logging.GetInstance().WriteInLog("Успешное добавление корневого типа параметра " + typeParameter.Name + " в базу данных");
                 }
                 catch (SqlException ex)
                 {
@@ -209,7 +209,7 @@ namespace ParameterReferenceBook
                     TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name,
                                                      typeParameter.IdTypeParameter.ToString(), (sender as MenuItem).Name);
 
-                    Logging.GetInstance().WriteInLog("Успешное добавление типа параметра " + typeParameter.Name);
+                    Logging.GetInstance().WriteInLog("Успешное добавление типа параметра " + typeParameter.Name + " в базу данных.");
                 }
                 catch (SqlException ex)
                 {
@@ -247,7 +247,7 @@ namespace ParameterReferenceBook
                     db.SaveChanges();
 
                     TreeFiller.GetInstance().RenameNode(ref treeView, editor.TypeParameterName);
-                    Logging.GetInstance().WriteInLog("Успешное переимнование типа параметра " + typeParameter.Name);
+                    Logging.GetInstance().WriteInLog("Успешное переимнование типа параметра " + typeParameter.Name + ".");
                 }
                 catch (SqlException ex)
                 {
