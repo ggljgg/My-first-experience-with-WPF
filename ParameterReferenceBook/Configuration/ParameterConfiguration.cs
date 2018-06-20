@@ -11,7 +11,9 @@ namespace ParameterReferenceBook
             Property(p => p.IdTypeParameter).IsRequired();
             Property(p => p.MinValue).IsOptional();
             Property(p => p.MaxValue).IsRequired();
-            Property(p => p.Description).IsOptional();
+            Property(p => p.Description)
+                           .IsOptional()
+                           .HasMaxLength(200);
         }
     }
 }
