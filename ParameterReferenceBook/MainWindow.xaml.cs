@@ -47,7 +47,7 @@ namespace ParameterReferenceBook
 
                     Parameter parameter = new Parameter
                     {
-                        Name = dialogWindow.ParameterName,
+                        ParameterName = dialogWindow.ParameterName,
                         IdTypeParameter = Convert.ToInt64((treeView.SelectedItem as TreeViewItem).Tag),
                         MinValue = dialogWindow.ParameterMinValue,
                         MaxValue = dialogWindow.ParameterMaxValue,
@@ -58,7 +58,7 @@ namespace ParameterReferenceBook
                     db.SaveChanges();
                     dataGrid_DataUpdate(db);
 
-                    Logging.GetInstance().WriteInLog("Успешное внесение параметра " + parameter.Name + " в базу данных.");
+                    Logging.GetInstance().WriteInLog("Успешное внесение параметра " + parameter.ParameterName + " в базу данных.");
                     MessageBox.Show("Данные успешно внесены.", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 catch (SqlException ex)
@@ -85,7 +85,7 @@ namespace ParameterReferenceBook
 
                     DialogWindow dialogWindow = new DialogWindow(this, (sender as Button).Name);
 
-                    dialogWindow.ParameterName = parameter.Name;
+                    dialogWindow.ParameterName = parameter.ParameterName;
                     dialogWindow.ParameterMinValue = parameter.MinValue;
                     dialogWindow.ParameterMaxValue = parameter.MaxValue;
                     dialogWindow.ParameterDescription = parameter.Description;
@@ -93,7 +93,7 @@ namespace ParameterReferenceBook
                     if (dialogWindow.ShowDialog() != true)
                         return;
 
-                    parameter.Name = dialogWindow.ParameterName;
+                    parameter.ParameterName = dialogWindow.ParameterName;
                     parameter.MinValue = dialogWindow.ParameterMinValue;
                     parameter.MaxValue = dialogWindow.ParameterMaxValue;
                     parameter.Description = dialogWindow.ParameterDescription;
@@ -101,7 +101,7 @@ namespace ParameterReferenceBook
                     db.SaveChanges();
                     dataGrid_DataUpdate(db);
 
-                    Logging.GetInstance().WriteInLog("Успешное внесение изменений параметра " + parameter.Name + " в базу данных.");
+                    Logging.GetInstance().WriteInLog("Успешное внесение изменений параметра " + parameter.ParameterName + " в базу данных.");
                     MessageBox.Show("Изменения успешно внесены.", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 catch (SqlException ex)
@@ -130,7 +130,7 @@ namespace ParameterReferenceBook
                     db.SaveChanges();
                     dataGrid_DataUpdate(db);
 
-                    Logging.GetInstance().WriteInLog("Успешное удаление параметра " + parameter.Name + " из базы данных.");
+                    Logging.GetInstance().WriteInLog("Успешное удаление параметра " + parameter.ParameterName + " из базы данных.");
                     MessageBox.Show("Данные успешно удалены.", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 catch (SqlException ex)
@@ -158,17 +158,17 @@ namespace ParameterReferenceBook
 
                     TypeParameter typeParameter = new TypeParameter
                     {
-                        Name = editor.TypeParameterName,
+                        TypeParameterName = editor.TypeParameterName,
                         IdTypeParameterParent = 0
                     };
 
                     db.TypeParameters.Add(typeParameter);
                     db.SaveChanges();
 
-                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name,
+                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.TypeParameterName,
                                                      typeParameter.IdTypeParameter.ToString(), (sender as MenuItem).Name);
 
-                    Logging.GetInstance().WriteInLog("Успешное добавление корневого типа параметра " + typeParameter.Name + " в базу данных");
+                    Logging.GetInstance().WriteInLog("Успешное добавление корневого типа параметра " + typeParameter.TypeParameterName + " в базу данных");
                 }
                 catch (SqlException ex)
                 {
@@ -199,17 +199,17 @@ namespace ParameterReferenceBook
 
                     TypeParameter typeParameter = new TypeParameter
                     {
-                        Name = editor.TypeParameterName,
+                        TypeParameterName = editor.TypeParameterName,
                         IdTypeParameterParent = Convert.ToInt64((treeView.SelectedItem as TreeViewItem).Tag)
                     };
 
                     db.TypeParameters.Add(typeParameter);
                     db.SaveChanges();
 
-                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.Name,
+                    TreeFiller.GetInstance().AddNode(ref treeView, typeParameter.TypeParameterName,
                                                      typeParameter.IdTypeParameter.ToString(), (sender as MenuItem).Name);
 
-                    Logging.GetInstance().WriteInLog("Успешное добавление типа параметра " + typeParameter.Name + " в базу данных.");
+                    Logging.GetInstance().WriteInLog("Успешное добавление типа параметра " + typeParameter.TypeParameterName + " в базу данных.");
                 }
                 catch (SqlException ex)
                 {
@@ -238,16 +238,16 @@ namespace ParameterReferenceBook
 
                     Editor editor = new Editor(this);
 
-                    editor.TypeParameterName = typeParameter.Name;
+                    editor.TypeParameterName = typeParameter.TypeParameterName;
 
                     if (editor.ShowDialog() != true)
                         return;
 
-                    typeParameter.Name = editor.TypeParameterName;
+                    typeParameter.TypeParameterName = editor.TypeParameterName;
                     db.SaveChanges();
 
                     TreeFiller.GetInstance().RenameNode(ref treeView, editor.TypeParameterName);
-                    Logging.GetInstance().WriteInLog("Успешное переимнование типа параметра " + typeParameter.Name + ".");
+                    Logging.GetInstance().WriteInLog("Успешное переимнование типа параметра " + typeParameter.TypeParameterName + ".");
                 }
                 catch (SqlException ex)
                 {
@@ -286,7 +286,7 @@ namespace ParameterReferenceBook
                     db.SaveChanges();
 
                     TreeFiller.GetInstance().DeleteNode(ref treeView);
-                    Logging.GetInstance().WriteInLog("Успешное удаление типа параметра " + typeParameter.Name + " из базы данных.");
+                    Logging.GetInstance().WriteInLog("Успешное удаление типа параметра " + typeParameter.TypeParameterName + " из базы данных.");
                 }
                 catch (SqlException ex)
                 {

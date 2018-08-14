@@ -16,8 +16,6 @@ namespace ParameterReferenceBook
             modelBuilder.Configurations.Add(new TypeParameterConfiguration());
             modelBuilder.Configurations.Add(new ParameterConfiguration());
 
-            modelBuilder.Conventions.Add(new NameConvention());
-
             modelBuilder.Entity<TypeParameter>()
                         .HasMany(p => p.Parameters)
                         .WithRequired(p => p.TypeParameter)

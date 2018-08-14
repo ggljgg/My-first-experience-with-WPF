@@ -7,7 +7,10 @@ namespace ParameterReferenceBook
         public ParameterConfiguration()
         {
             ToTable("student.Parameter").HasKey(p => p.IdParameter);
-            Property(p => p.Name).IsRequired();
+            Property(p => p.ParameterName)
+                           .HasMaxLength(30)
+                           .IsVariableLength()
+                           .IsRequired();
             Property(p => p.IdTypeParameter).IsRequired();
             Property(p => p.MinValue).IsOptional();
             Property(p => p.MaxValue).IsRequired();

@@ -35,7 +35,7 @@
             <ColumnDefinition Width="0.3*" />
         </Grid.ColumnDefinitions>
         <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" IsEnabled="False"/>
-        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}" Foreground="#FFF0F3BD" BorderBrush="#FF1A5E63">
+        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}" Foreground="#FFF0F3BD" BorderBrush="{x:Null}">
             <TreeView.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="addMI" Header="Добавить узел" Click="addMI_Click"/>

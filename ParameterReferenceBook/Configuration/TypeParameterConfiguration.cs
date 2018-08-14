@@ -7,7 +7,10 @@ namespace ParameterReferenceBook
         public TypeParameterConfiguration()
         {
             ToTable("student.TypeParameter").HasKey(t => t.IdTypeParameter);
-            Property(t => t.Name).IsRequired();
+            Property(t => t.TypeParameterName)
+                           .HasMaxLength(30)
+                           .IsVariableLength()
+                           .IsRequired();
             Property(t => t.IdTypeParameterParent).IsRequired();
         }
     }

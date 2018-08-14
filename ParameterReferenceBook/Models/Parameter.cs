@@ -3,7 +3,7 @@ namespace ParameterReferenceBook
     public class Parameter
     {
         public long IdParameter { get; set; }
-        public string Name { get; set; }
+        public string ParameterName { get; set; }
         public long IdTypeParameter { get; set; }
         public float? MinValue { get; set; }
         public float MaxValue { get; set; }

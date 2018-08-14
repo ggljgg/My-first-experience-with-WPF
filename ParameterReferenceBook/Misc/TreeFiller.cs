@@ -34,7 +34,7 @@ namespace ParameterReferenceBook
                     {
                         TreeViewItem rootNode = new TreeViewItem
                         {
-                            Header = typeParameter.Name,
+                            Header = typeParameter.TypeParameterName,
                             Tag = typeParameter.IdTypeParameter.ToString()
                         };
 
@@ -92,7 +92,7 @@ namespace ParameterReferenceBook
                 {
                     TreeViewItem childNode = new TreeViewItem
                     {
-                        Header = childType.Name,
+                        Header = childType.TypeParameterName,
                         Tag = childType.IdTypeParameter.ToString()
                     };
 
