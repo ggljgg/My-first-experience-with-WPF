@@ -67,20 +67,33 @@ namespace ParameterReferenceBook
         private void acceptButton_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(tbName.Text))
+            {
                 tbName.BorderBrush = Brushes.Red;
-
-            if (String.IsNullOrEmpty(tbMax.Text))
-                tbMax.BorderBrush = Brushes.Red;
-
-            if (Single.Parse(tbMin.Text) > Single.Parse(tbMax.Text))
-                tbMin.BorderBrush = Brushes.Red;
-
-            if (
-                tbName.BorderBrush == Brushes.Red ||
-                tbMax.BorderBrush == Brushes.Red ||
-                tbMin.BorderBrush == Brushes.Red
-               )
                 return;
+            }
+                
+            if (String.IsNullOrEmpty(tbMax.Text))
+            {
+                tbMax.BorderBrush = Brushes.Red;
+                return;
+            }
+
+            if (!Single.TryParse(tbMax.Text, out float maxResult))
+            {
+                tbMax.BorderBrush = Brushes.Red;
+                return;
+            }
+
+            if (!String.IsNullOrEmpty(tbMin.Text))
+            {
+                if (!Single.TryParse(tbMin.Text, out float minResult) || Single.Parse(tbMin.Text) > Single.Parse(tbMax.Text))
+                {
+                    tbMin.BorderBrush = Brushes.Red;
+                    return;
+                }
+                else
+                    tbMin.BorderBrush = Brushes.Gray;
+            }
 
             DialogResult = true;
         }

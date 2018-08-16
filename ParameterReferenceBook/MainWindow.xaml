@@ -47,7 +47,7 @@
         </TreeView>
         <DataGrid x:Name="dataGridView" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Margin="30 50 30 20" IsReadOnly="True" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" RowHeaderWidth="20" SelectionMode="Single" GridLinesVisibility="Horizontal" Foreground="#FF1E1E24" BorderBrush="#FF1A5E63">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Шифр" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Path=ParameterName}" Header="Шифр" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding Path=MinValue}" Header="Мин. значение" Width="0.25*"/>
                 <DataGridTextColumn Binding="{Binding Path=MaxValue}" Header="Макс. значение" Width="0.25*"/>
                 <DataGridTextColumn Binding="{Binding Path=Description}" Header="Описание" Width="*"/>
