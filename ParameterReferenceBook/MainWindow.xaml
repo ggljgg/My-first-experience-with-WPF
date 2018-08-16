@@ -35,7 +35,7 @@
             <ColumnDefinition Width="0.3*" />
         </Grid.ColumnDefinitions>
         <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" IsEnabled="False"/>
-        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}" Foreground="#FFF0F3BD" BorderBrush="#FF1A5E63">
+        <TreeView x:Name="treeView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected" Background="{x:Null}" Foreground="#FFF0F3BD" BorderBrush="{x:Null}">
             <TreeView.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="addMI" Header="Добавить узел" Click="addMI_Click"/>
@@ -47,7 +47,7 @@
         </TreeView>
         <DataGrid x:Name="dataGridView" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Margin="30 50 30 20" IsReadOnly="True" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" RowHeaderWidth="20" SelectionMode="Single" GridLinesVisibility="Horizontal" Foreground="#FF1E1E24" BorderBrush="#FF1A5E63">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Шифр" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Path=ParameterName}" Header="Шифр" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding Path=MinValue}" Header="Мин. значение" Width="0.25*"/>
                 <DataGridTextColumn Binding="{Binding Path=MaxValue}" Header="Макс. значение" Width="0.25*"/>
                 <DataGridTextColumn Binding="{Binding Path=Description}" Header="Описание" Width="*"/>

@@ -39,11 +39,11 @@
             </StackPanel>
             <StackPanel Canvas.Left="20" Canvas.Top="75">
                 <TextBlock Text="Мин. значение:" Margin="3 0 3 0"/>
-                <TextBox x:Name="tbMin" MaxLength="4" PreviewKeyDown="tb_PreviewKeyDown" PreviewTextInput="tb_PreviewTextInput"/>
+                <TextBox x:Name="tbMin" MaxLength="5" PreviewKeyDown="tb_PreviewKeyDown" TextChanged="tb_TextChanged" />
             </StackPanel>
             <StackPanel Canvas.Left="190" Canvas.Top="75">
                 <TextBlock Text="Макс. значение:" Margin="3 0 3 0"/>
-                <TextBox x:Name="tbMax" MaxLength="4" PreviewKeyDown="tb_PreviewKeyDown" PreviewTextInput="tb_PreviewTextInput" TextChanged="tb_TextChanged"/>
+                <TextBox x:Name="tbMax" MaxLength="5" PreviewKeyDown="tb_PreviewKeyDown" TextChanged="tb_TextChanged"/>
             </StackPanel>
             <StackPanel Canvas.Left="20" Canvas.Top="140">
                 <TextBlock Text="Описание:" Margin="3 0 3 0"/>

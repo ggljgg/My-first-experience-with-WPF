@@ -26,21 +26,21 @@ namespace ParameterReferenceBook
             set { tbName.Text = value; }
         }
 
-        public short? ParameterMinValue
+        public float? ParameterMinValue
         {
             get
             {
                 if (String.IsNullOrEmpty(tbMin.Text))
                     return null;
                 else
-                    return Convert.ToInt16(tbMin.Text);
+                    return Convert.ToSingle(tbMin.Text);
             }
             set { tbMin.Text = value.ToString(); }
         }
 
-        public short ParameterMaxValue
+        public float ParameterMaxValue
         {
-            get { return Convert.ToInt16(tbMax.Text); }
+            get { return Convert.ToSingle(tbMax.Text); }
             set { tbMax.Text = value.ToString(); }
         }
 
@@ -67,21 +67,35 @@ namespace ParameterReferenceBook
         private void acceptButton_Click(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(tbName.Text))
+            {
                 tbName.BorderBrush = Brushes.Red;
-
-            if (String.IsNullOrEmpty(tbMax.Text))
-                tbMax.BorderBrush = Brushes.Red;
-
-            if (tbName.BorderBrush == Brushes.Red || tbMax.BorderBrush == Brushes.Red)
                 return;
+            }
+                
+            if (String.IsNullOrEmpty(tbMax.Text))
+            {
+                tbMax.BorderBrush = Brushes.Red;
+                return;
+            }
+
+            if (!Single.TryParse(tbMax.Text, out float maxResult))
+            {
+                tbMax.BorderBrush = Brushes.Red;
+                return;
+            }
+
+            if (!String.IsNullOrEmpty(tbMin.Text))
+            {
+                if (!Single.TryParse(tbMin.Text, out float minResult) || Single.Parse(tbMin.Text) > Single.Parse(tbMax.Text))
+                {
+                    tbMin.BorderBrush = Brushes.Red;
+                    return;
+                }
+                else
+                    tbMin.BorderBrush = Brushes.Gray;
+            }
 
             DialogResult = true;
-        }
-
-        private void tb_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            if (!Char.IsDigit(e.Text, 0))
-                e.Handled = true;
         }
 
         private void tb_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -92,10 +106,22 @@ namespace ParameterReferenceBook
 
         private void tb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (String.IsNullOrEmpty((sender as TextBox).Text) || String.IsNullOrWhiteSpace((sender as TextBox).Text))
+            if (
+                String.IsNullOrEmpty((sender as TextBox).Text) ||
+                String.IsNullOrWhiteSpace((sender as TextBox).Text)
+                )
                 (sender as TextBox).BorderBrush = Brushes.Red;
             else
                 (sender as TextBox).BorderBrush = Brushes.Gray;
+
+            // try parse to float
+            if ((sender as TextBox).Name != "tbName")
+            {
+                if (!Single.TryParse((sender as TextBox).Text, out float result))
+                    (sender as TextBox).BorderBrush = Brushes.Red;
+                else
+                    (sender as TextBox).BorderBrush = Brushes.Gray;
+            }
         }
     }
 }
